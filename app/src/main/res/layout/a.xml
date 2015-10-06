@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#00FF00"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:padding="5dp">
+
+<SeekBar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/seekBar3"
+    android:layout_marginTop="63dp"
+    android:layout_below="@+id/textView2"
+    android:layout_toRightOf="@+id/button21"
+    android:layout_toEndOf="@+id/button21" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Analog Pins"
+        android:id="@+id/textView2"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/button21"
+        android:layout_toEndOf="@+id/button21" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11"
+        android:id="@+id/button21"
+        android:layout_alignTop="@+id/seekBar3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10"
+        android:id="@+id/button22"
+        android:layout_below="@+id/button21"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/button21"
+        android:layout_alignEnd="@+id/button21" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar6"
+        android:layout_below="@+id/button21"
+        android:layout_alignRight="@+id/seekBar3"
+        android:layout_alignEnd="@+id/seekBar3"
+        android:layout_toRightOf="@+id/button21"
+        android:layout_toEndOf="@+id/button21" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9"
+        android:id="@+id/button23"
+        android:layout_below="@+id/button22"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/button22"
+        android:layout_alignEnd="@+id/button22" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar7"
+        android:layout_below="@+id/button22"
+        android:layout_toRightOf="@+id/button23"
+        android:layout_alignRight="@+id/seekBar6"
+        android:layout_alignEnd="@+id/seekBar6" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6"
+        android:id="@+id/button24"
+        android:layout_below="@+id/button23"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/button23"
+        android:layout_alignEnd="@+id/button23" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar8"
+        android:layout_below="@+id/button23"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/button23"
+        android:layout_toEndOf="@+id/button23" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:id="@+id/button25"
+        android:layout_below="@+id/button24"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/button24"
+        android:layout_alignEnd="@+id/button24" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar9"
+        android:layout_below="@+id/button24"
+        android:layout_toRightOf="@+id/button24"
+        android:layout_alignRight="@+id/seekBar8"
+        android:layout_alignEnd="@+id/seekBar8" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:id="@+id/button26"
+        android:layout_below="@+id/button25"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/button25"
+        android:layout_alignEnd="@+id/button25" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar10"
+        android:layout_below="@+id/button25"
+        android:layout_toRightOf="@+id/button26"
+        android:layout_alignRight="@+id/seekBar9"
+        android:layout_alignEnd="@+id/seekBar9" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="temp"
+        android:id="@+id/button27"
+        android:layout_below="@+id/button26"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/button26"
+        android:layout_alignEnd="@+id/button26" />
+
+    <SeekBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar11"
+        android:layout_below="@+id/button26"
+        android:layout_toRightOf="@+id/button27"
+        android:layout_alignRight="@+id/seekBar10"
+        android:layout_alignEnd="@+id/seekBar10" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="0 - 255"
+        android:id="@+id/textView4"
+        android:layout_above="@+id/button21"
+        android:layout_toRightOf="@+id/button21"
+        android:layout_toEndOf="@+id/button21" />
+
+
+</RelativeLayout>
+
