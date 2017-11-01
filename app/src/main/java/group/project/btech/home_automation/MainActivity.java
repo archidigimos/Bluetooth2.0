@@ -14,7 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,11 +21,11 @@ public class MainActivity extends AppCompatActivity  {
 
     private static final int REQUEST_CONNECT_DEVICE_SECURE = 1;
     public EditText et3;
-     Button b1, b2, b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18,b28,b29,b30,b32;
-    SeekBar seekBar3,seekBar6,seekBar7,seekBar8,seekBar9,seekBar10,seekBar11;
+     Button b2, b30,b32;
     String mConnectedDeviceName ;
     Context context;
     TextView tv1;
+    String readMessage = "";
     final Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -50,14 +49,10 @@ public class MainActivity extends AppCompatActivity  {
                 case Constants.MESSAGE_READ:
                     byte[] readBuf = (byte[]) msg.obj;
                     // construct a string from the valid bytes in the buffer
-                    String readMessage = new String(readBuf, 0, msg.arg1);
-
-                    /*
-                    update_ui is the method which gets the recieved message. so i am sending the recieved message to this method to set
-                    title, thats my choice if you want to do something else do it, all that matters is what you do with the recieved
-                    message
-                     */
+                    readMessage = readMessage + new String(readBuf, 0, msg.arg1);
+                    //Toast.makeText(context, readMessage, Toast.LENGTH_SHORT).show();
                     update_ui(readMessage);
+
                     break;
                 case Constants.MESSAGE_DEVICE_NAME:
                     // save the connected device's name
@@ -108,71 +103,13 @@ public class MainActivity extends AppCompatActivity  {
     };
 
     private void update_ui(String readMessage) {
-
         tv1.setText(readMessage);
-
-
-
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exp1);
-        b1 = (Button)findViewById(R.id.button);
-        b1.setOnClickListener(new Button_Activity(handler));
-        b2 = (Button)findViewById(R.id.button2);
-        b2.setOnClickListener(new Button_Activity(handler));
-        b3 = (Button)findViewById(R.id.button3);
-        b3.setOnClickListener(new Button_Activity(handler));
-        b4 = (Button)findViewById(R.id.button4);
-        b4.setOnClickListener(new Button_Activity(handler));
-        b5 = (Button)findViewById(R.id.button5);
-        b5.setOnClickListener(new Button_Activity(handler));
-        b6 = (Button)findViewById(R.id.button6);
-        b6.setOnClickListener(new Button_Activity(handler));
-        b7 = (Button)findViewById(R.id.button7);
-        b7.setOnClickListener(new Button_Activity(handler));
-        b8 = (Button)findViewById(R.id.button8);
-        b8.setOnClickListener(new Button_Activity(handler));
-        b9 = (Button)findViewById(R.id.button9);
-        b9.setOnClickListener(new Button_Activity(handler));
-        b10 = (Button)findViewById(R.id.button10);
-        b10.setOnClickListener(new Button_Activity(handler));
-        b11 = (Button)findViewById(R.id.button11);
-        b11.setOnClickListener(new Button_Activity(handler));
-        b12 = (Button)findViewById(R.id.button12);
-        b12.setOnClickListener(new Button_Activity(handler));
-        b13 = (Button)findViewById(R.id.button13);
-        b13.setOnClickListener(new Button_Activity(handler));
-        b14 = (Button)findViewById(R.id.button14);
-        b14.setOnClickListener(new Button_Activity(handler));
-        b15 = (Button)findViewById(R.id.button15);
-        b15.setOnClickListener(new Button_Activity(handler));
-        b16 = (Button)findViewById(R.id.button16);
-        b16.setOnClickListener(new Button_Activity(handler));
-        b17 = (Button)findViewById(R.id.button17);
-        b17.setOnClickListener(new Button_Activity(handler));
-        b18 = (Button)findViewById(R.id.button18);
-        b18.setOnClickListener(new Button_Activity(handler));
-        b28 = (Button)findViewById(R.id.button28);
-        b28.setOnClickListener(new Button_Activity(handler));
-        b29 = (Button)findViewById(R.id.button29);
-        b29.setOnClickListener(new Button_Activity(handler));
-        seekBar3 = (SeekBar)findViewById(R.id.seekBar3);
-        seekBar3.setOnSeekBarChangeListener(new Button_Activity(handler, this, (Button) findViewById(R.id.button21)));
-        seekBar6 = (SeekBar)findViewById(R.id.seekBar6);
-        seekBar6.setOnSeekBarChangeListener(new Button_Activity(handler,this, (Button) findViewById(R.id.button22)));
-        seekBar7 = (SeekBar)findViewById(R.id.seekBar7);
-        seekBar7.setOnSeekBarChangeListener(new Button_Activity(handler,this, (Button) findViewById(R.id.button23)));
-        seekBar8 = (SeekBar)findViewById(R.id.seekBar8);
-        seekBar8.setOnSeekBarChangeListener(new Button_Activity(handler,this, (Button) findViewById(R.id.button24)));
-        seekBar9 = (SeekBar)findViewById(R.id.seekBar9);
-        seekBar9.setOnSeekBarChangeListener(new Button_Activity(handler,this, (Button) findViewById(R.id.button25)));
-        seekBar10 = (SeekBar)findViewById(R.id.seekBar10);
-        seekBar10.setOnSeekBarChangeListener(new Button_Activity(handler,this, (Button) findViewById(R.id.button26)));
-        seekBar11 = (SeekBar)findViewById(R.id.seekBar11);
-        seekBar11.setOnSeekBarChangeListener(new Button_Activity(handler,this, (Button) findViewById(R.id.button27)));
         context = this;
         b2 = (Button)findViewById(R.id.button31);
         b2.setOnClickListener(m);
@@ -182,11 +119,6 @@ public class MainActivity extends AppCompatActivity  {
         et3 = (EditText)findViewById(R.id.editText3);
         b32 = (Button)findViewById(R.id.button32);
         b32.setOnClickListener(l);
-
-
-
-
-
     }
 
     @Override
@@ -212,8 +144,6 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     private void setStatus(String string) {
-
-
 
         this.setTitle(string);
     }
